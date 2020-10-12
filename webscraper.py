@@ -1,24 +1,16 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
-# Note: Creating many variables for function/method calls creates cleaner code
-
-# URL to scrape
 url = 'https://www.newegg.com/Water-Liquid-Cooling/SubCategory/ID-575?Tid=8008'
 
-# Calling urlopen onto the url to open a connection using urlopen()
 userClient = urlopen(url)
 
-# Reads the raw HTML file using .read()
 rawHTML = userClient.read()
 
-# Closes the client to terminate connection using .close()
 userClient.close()
 
-# Parses rawHTML by calling BeautifulSoup() onto rawHTML
 rawHTMLSoup = BeautifulSoup(rawHTML, 'html.parser')
 
-# Finds all div.class with name "item-container"
 itemContainers = rawHTMLSoup.findAll('div', {'class':'item-container'})
 
 container = itemContainers[0]
@@ -58,7 +50,6 @@ for container in itemContainers:
     print('Price: ' + price)
     print('Shipping: ' + shipping)
 
-    # Writes the values into an excel sheet
     f.write(brand + ', ' + productName.replace(',', '|') + ', ' + numOfFans + ', ' + price + ', ' + shipping + ', ' + "\n")
 
 f.close()
