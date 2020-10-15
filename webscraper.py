@@ -56,14 +56,12 @@ for container in itemContainers:
 
     shippingContainer = container.findAll('li', {'class':'price-ship'})
     shipping = shippingContainer[0].text.strip()
-
     
     print('Brand: ' + brandName)
     print('Product Name: ' + productName)
     print('Radiator Size: ' + radiatorSizeConversion)
     print('Price: ' + price)
     print('Shipping: ' + shipping)
-    
 
     # Writes the values into an excel sheet
     f.write(brandName + ', ' + productName.replace(',', '|') + ', ' + radiatorSizeConversion + ', ' + price + ', ' + shipping + ', ' + "\n")
