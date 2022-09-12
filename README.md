@@ -1,4 +1,4 @@
-# Python-Webscraper
+# Newegg-Webscraper
 
 ## Description
 
