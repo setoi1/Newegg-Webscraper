@@ -1,5 +1,12 @@
-# Newegg-Webscraper
+# Python-Webscraper
 
 ## Description
 
-A basic Webscraper built with Python that can be easily edited to accomodate different websites.
+A webscraper built to find certain computer hardware products, prices, and descriptions based on supplied conditions
+
+Can be modified to scrape other websites with minimal modifications
+
+## Tech Stack
+
+- Python
+- Selenium Webdriver
